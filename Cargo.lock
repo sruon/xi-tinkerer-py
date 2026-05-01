@@ -44,7 +44,7 @@ checksum = "9330f8b2ff13f34540b44e946ef35111825727b38d33286ef986142615121801"
 [[package]]
 name = "common"
 version = "0.1.0"
-source = "git+https://github.com/sruon/xi-tinkerer.git#b4c69edea379d6cf8ec8c76486ad102ea36a94f2"
+source = "git+https://github.com/sruon/xi-tinkerer.git?branch=unstable#2d181a464ad48676d11c6e7b0246183e0a972a07"
 dependencies = [
  "anyhow",
  "thiserror",
@@ -53,7 +53,7 @@ dependencies = [
 [[package]]
 name = "dats"
 version = "0.1.0"
-source = "git+https://github.com/sruon/xi-tinkerer.git#b4c69edea379d6cf8ec8c76486ad102ea36a94f2"
+source = "git+https://github.com/sruon/xi-tinkerer.git?branch=unstable#2d181a464ad48676d11c6e7b0246183e0a972a07"
 dependencies = [
  "anyhow",
  "base64",
@@ -70,7 +70,7 @@ dependencies = [
 [[package]]
 name = "encoding"
 version = "0.1.0"
-source = "git+https://github.com/sruon/xi-tinkerer.git#b4c69edea379d6cf8ec8c76486ad102ea36a94f2"
+source = "git+https://github.com/sruon/xi-tinkerer.git?branch=unstable#2d181a464ad48676d11c6e7b0246183e0a972a07"
 dependencies = [
  "anyhow",
 ]
