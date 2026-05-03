@@ -3,10 +3,12 @@ use pyo3::types::{PyDict, PyList};
 use std::path::PathBuf;
 
 use dats::dat_format::DatFormat;
+use dats::formats::auto_translate::AutoTranslate;
 use dats::formats::dialog::Dialog;
 use dats::formats::dmsg_table::DmsgTable;
 use dats::formats::entity_names::EntityNames;
 use dats::formats::events::Events;
+use dats::formats::furniture_data::FurnitureData;
 use dats::formats::item_info::ItemInfoTable;
 use dats::formats::menu_table::MenuTable;
 use dats::formats::status_info::StatusInfoTable;
@@ -90,6 +92,16 @@ fn parse_xistring_table(py: Python, path: &str) -> PyResult<PyObject> {
     parse_format::<XiStringTable>(py, path)
 }
 
+#[pyfunction]
+fn parse_auto_translate(py: Python, path: &str) -> PyResult<PyObject> {
+    parse_format::<AutoTranslate>(py, path)
+}
+
+#[pyfunction]
+fn parse_furniture_data(py: Python, path: &str) -> PyResult<PyObject> {
+    parse_format::<FurnitureData>(py, path)
+}
+
 #[pymodule]
 fn xi_tinkerer(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(parse_menu_table, m)?)?;
@@ -100,5 +112,7 @@ fn xi_tinkerer(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(parse_item_info, m)?)?;
     m.add_function(wrap_pyfunction!(parse_status_info, m)?)?;
     m.add_function(wrap_pyfunction!(parse_xistring_table, m)?)?;
+    m.add_function(wrap_pyfunction!(parse_auto_translate, m)?)?;
+    m.add_function(wrap_pyfunction!(parse_furniture_data, m)?)?;
     Ok(())
 }
